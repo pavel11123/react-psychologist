@@ -1,0 +1,25 @@
+@use "sass:math";
+
+@import "./components/scss/base.scss";
+@import "./components/scss/fonts.scss";
+
+@import "./components/scss/mixins.scss";
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: #ece8f3;
+}
+
+.container {
+  max-width: rem(1030);
+  margin: 0 auto;
+  padding: 0 rem(15) 0 rem(15);
+}
+
+.main {
+  flex: 1 1 auto;
+}

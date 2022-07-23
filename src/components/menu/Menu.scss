@@ -1,0 +1,46 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(130%);
+  -webkit-transform: translateX(130%);
+  -moz-transform: translateX(130%);
+  -ms-transform: translateX(130%);
+  -o-transform: translateX(130%);
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+
+.menu.active {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+
+.blur {
+  width: 100vw;
+  height: 100vh;
+  filter: blur(2px);
+  backdrop-filter: blur(2px);
+  position: absolute;
+  -webkit-filter: blur(2px);
+  background: rgba(18, 0, 57, 0.8);
+  position: absolute;
+  z-index: 0;
+}
+
+.menu__content {
+  width: 30%;
+  height: 100%;
+  background-color: #baa5e7;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}

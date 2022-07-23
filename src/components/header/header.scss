@@ -1,0 +1,110 @@
+@use "sass:math";
+
+@import "../scss/mixins.scss";
+
+.header {
+  position: relative;
+  z-index: 1000;
+  margin-top: rem(50);
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+
+  & > .line {
+    @media (max-width: 1105px) {
+      display: none;
+    }
+  }
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: rem(1030);
+  padding: 0 rem(15) 0 rem(15);
+  flex: 20 1 auto;
+
+  .line {
+    margin: 0 rem(15);
+  }
+
+  @media (max-width: 1105px) {
+    margin: 0 auto;
+    flex: 1 1 auto;
+  }
+}
+
+.logo {
+  max-width: 191px;
+  max-height: 85px;
+  cursor: pointer;
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// BEM линия
+.line {
+  height: 2px;
+  background-color: #683ace;
+  flex: 1 20 auto;
+}
+
+// кнопка меню
+.burger-btn {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #000000;
+    opacity: 1;
+    border-radius: 9px;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0px;
+      left: 0px;
+    }
+    &:nth-child(2) {
+      top: 9px;
+      left: 0px;
+    }
+    &:nth-child(3) {
+      top: 18px;
+      left: 0px;
+    }
+  }
+}
+
+// При добавлении класса active анимация для кнопки меню
+.burger-btn.active span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+
+.burger-btn.active span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.burger-btn.active span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+  width: 100%;
+}
